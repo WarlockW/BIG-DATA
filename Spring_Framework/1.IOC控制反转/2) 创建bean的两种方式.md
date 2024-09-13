@@ -63,7 +63,7 @@ public class Student_setter {
 }
 ```
 
-通过XML在IOC容器中构建bean
+<h1>通过XML在IOC容器中确定构建bean的属性</h1>
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -88,7 +88,7 @@ public class Student_setter {
 </beans>
 ```
 
-依据XML构建主函数
+<h1>从IOC容器中获取之前XML中构建好的bean对象</h1>
 
 ```
 package test;
