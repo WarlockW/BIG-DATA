@@ -53,6 +53,9 @@ public class Classes {
 
 <h1>通过XML对bean进行配置</h1>
 
+Spring通过XML默认从上到下对bean对象进行构建，因此在构建Student的时候应该先完成对Classes的构建，因此在bean中使用depends-on参数。 <br>
+在配置Student的Classes属性时，由于引入的不是常规类型的变量，而是一个对象类型（也就是DI，将一种bean注入进另一个bean），所以不能用 value 而是要用 ref <br>
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
