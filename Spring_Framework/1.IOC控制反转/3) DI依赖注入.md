@@ -85,3 +85,38 @@ Spring通过XML默认从上到下对bean对象进行构建，因此在构建Stud
     </bean>
 </beans>
 ```
+
+<h1>从IOC容器中获取bean对象</h1>
+
+```
+import SpringFramework_IoC_DI.Classes;
+import SpringFramework_IoC_DI.Student;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class SpringFramework_IoC_DI_test {
+    public static void main(String[] args) {
+        ApplicationContext cxt = new ClassPathXmlApplicationContext("SpringFramework_IoC_DI.xml");
+        // 获取班级
+        Classes classes = (Classes) cxt.getBean("classes");
+        System.out.println(classes);
+
+        //获取setter创建的学生1
+        Student student1 = (Student) cxt.getBean("student1");
+        System.out.println(student1);
+        //获取constructor创建的学生2
+        Student student2 = (Student) cxt.getBean("student2");
+        System.out.println(student2);
+    }
+}
+
+```
+
+运行结果为
+
+```
+通过有参构造创建对象
+Classes(id=1, name=一班)
+Student(id=1, name=张三, age=19, classes=Classes(id=1, name=一班))
+Student(id=2, name=李四, age=18, classes=Classes(id=1, name=一班))
+```
