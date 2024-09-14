@@ -4,6 +4,8 @@
 
 <h1>构建基础类</h1>
 
+student类，其中一个属性
+
 ```
 import lombok.Data;
 import lombok.ToString;
@@ -27,4 +29,24 @@ public class Student {
     }
 }
 
+```
+
+student类，用于后续注入classes类
+
+```
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@ToString
+public class Classes {
+    private Integer id;
+    private String name;
+
+    public Classes(Integer id,String name){
+        this.id = id;
+        this.name = name;
+    }
+}
 ```
